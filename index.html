@@ -6,7 +6,7 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
-  <title>Skill Safari | Rock, Paper, Scissors</title>
+  <title>Skill Safari | Rock, Paper, scissors</title>
 </head>
 <body>
 <div class="container">
@@ -26,9 +26,9 @@
         </div>
     </button>
     
-    <button class="btn-scissor g-btns" data-choice="scissor">
+    <button class="btn-scissors g-btns" data-choice="scissors">
         <div class="btn-inner">
-          <img src="./images/icon-scissors.svg" alt="scissor">
+          <img src="./images/icon-scissors.svg" alt="scissors">
         </div>
     </button>
     
@@ -45,9 +45,9 @@
   <div class="selection" id="selection">
   <div>
     <h2>you picked</h2>
-     <button class="btn-paper g-btns" data-choice="paper">
+     <button class="btn-paper g-btns" id="user-select" data-choice="paper">
       <div class="btn-inner">
-      <img src="./images/icon-paper.svg" alt="paper">
+      <img src="./images/icon-paper.svg" alt="paper" class="user-img">
       </div>
     </button>
   </div>
@@ -57,9 +57,9 @@
   <div>
     <h2>the house picked</h2>
   
-    <button class="btn-scissor g-btns" data-choice="scissor">
+    <button class="btn-scissors g-btns" id="computer-select" data-choice="scissors" >
       <div class="btn-inner">
-        <img src="./images/icon-scissors.svg" alt="scissor">
+        <img src="./images/icon-scissors.svg" alt="scissors" class="house-img">
       </div>
   </button> 
   </div>

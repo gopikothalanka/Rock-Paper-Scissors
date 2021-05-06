@@ -8,11 +8,15 @@ const closeBtn =document.querySelector('.close-btn');
 const scoreCount =document.getElementById('score-count');
 const buttons=document.querySelectorAll('.g-btns');
 
-const gameEl=document.getElementById('game');
-const selectionEl=document.getElementById('selection');
+const gameDiv=document.getElementById('game');
+const selectionDiv=document.getElementById('selection');
 
+const userSelect = document.getElementById('user-select');
+const computerSelect = document.getElementById('computer-select');
 
-const choices =['paper','scissor','rock'];
+const userImg =document.querySelector('user-img');
+const houseImg =document.querySelector('house-img');
+const choices =['paper','scissors','rock'];
 let score =0;
 let userChoice=undefined;
 
@@ -20,10 +24,11 @@ buttons.forEach(button => {
   button.addEventListener('click',()=>{
       userChoice =button.getAttribute ('data-choice');
       console.log(userChoice);
-     
+      userImg.src=`./images/icon-${userChoice}.svg`;
 
       checkWinner();
       
+     
   });
 });
 
@@ -35,9 +40,13 @@ console.log(`house pick ${housePick()}`);
 function checkWinner(){
   const houseChoice= housePick();
   
+  // update view 
+  viewSelection(userSelect,userChoice);
+  viewSelection(computerSelect,houseChoice);
+
   if(userChoice === houseChoice){
     // DRAW
-    }else if(userChoice ==='paper' && houseChoice==='rock'|| userChoice ==='rock' && houseChoice==='scissor' || userChoice ==='scissor' && houseChoice==='paper') {
+    }else if(userChoice ==='paper' && houseChoice==='rock'|| userChoice ==='rock' && houseChoice==='scissors' || userChoice ==='scissors' && houseChoice==='paper') {
       // user win
       updateScore(1);
     }else{
@@ -46,8 +55,8 @@ function checkWinner(){
       // user lost
 
     }
-    gameEl.style.display='none';
-    selectionEl.style.display='flex';
+    gameDiv.style.display='none';
+    selectionDiv.style.display='flex';
 }
 // score update
 function updateScore(value){
@@ -55,6 +64,13 @@ function updateScore(value){
   scoreCount.innerText =score;
 }
 
+// function updateSelection (selectionEl,choice){
+
+//   selectionEl.classList.remove('btn-paper');
+//   selectionEl.classList.remove('btn-scissors');
+//   selectionEl.classList.remove('btn-rock');
+
+// }
 //Rules buttons open/close actions
 
 rulesBtn.addEventListener('click',()=>{

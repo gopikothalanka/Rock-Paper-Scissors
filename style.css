@@ -8,8 +8,8 @@
 
 /*variables*/
 :root{
-  --scissor-gradient: hsl(39, 89%, 49%);
-  --scissor-gradient2: hsl(40, 84%, 53%);
+  --scissors-gradient: hsl(39, 89%, 49%);
+  --scissors-gradient2: hsl(40, 84%, 53%);
   --paper-gradient: hsl(230, 89%, 62%);
   --paper-gradient2: hsl(230, 89%, 65%);
   --rock-gradient:hsl(349, 71%, 52%);
@@ -78,7 +78,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: 
-  "paper scissor" 
+  "paper scissors" 
   "rock rock";
   place-items: center;
   height: 30rem;
@@ -132,9 +132,9 @@ body {
    
  
 }
-.btn-scissor{
-  grid-area: scissor;
-  background: linear-gradient(to bottom,var(--scissor-gradient),var(--scissor-gradient2));
+.btn-scissors{
+  grid-area: scissors;
+  background: linear-gradient(to bottom,var(--scissors-gradient),var(--scissors-gradient2));
 }
 .btn-rock{
   grid-area: rock;
