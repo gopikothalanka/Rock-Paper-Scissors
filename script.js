@@ -28,6 +28,12 @@ buttons.forEach(button => {
       checkWinner();
       userImg.src=`./images/icon-${userChoice}.svg`;
       houseImg.src=`./images/icon-${houseChoice}.svg`;
+      userSelect.classList.remove('btn-paper');
+      computerSelect.classList.remove('tn-scissors');
+
+      userSelect.classList.add(`btn-${userChoice}`);
+      computerSelect.classList.add(`btn-${houseChoice}`);
+      
      
   });
 });
