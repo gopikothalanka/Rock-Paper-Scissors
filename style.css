@@ -107,7 +107,6 @@ body {
   align-items: center;
   justify-content: center;
   display: flex;
-  
    /* shadow for bottom border outer circle */
   box-shadow: inset 0 -6px rgba(0, 0, 0, 0.15); 
 }
@@ -124,8 +123,6 @@ body {
   place-items: center;
   box-shadow: inset 0 6px rgba(0, 0, 0, 0.15);
 }
-
-
 .btn-paper{
   grid-area: paper;
   background: linear-gradient(to bottom,var(--paper-gradient),var(--paper-gradient2));
@@ -158,24 +155,28 @@ body {
   text-transform: uppercase;
   font-size: 1.3rem;
   cursor: pointer;
-
 }
 
 .container-two{
+  display: none;
   position: relative;
   margin: 0 auto;
   padding: 2rem;
   max-width: 800px;
-  display: grid;
   grid-template-columns: auto auto auto;
   place-items: center;
+  text-align: center;
 }
-.container-two.g-btns{
-  margin-top: 40px;
+.container-two .g-btns{
   pointer-events: none;
 }
+.picked h2{
+  padding-bottom: 1.5rem;
+}
+.board h1{
+padding-bottom: 1.5rem;
+}
 .again-btn {
-  
   background:whitesmoke;
   border: 2px solid var(--header-outline);
   border-radius: 0.6rem;
@@ -204,10 +205,6 @@ body {
   letter-spacing: 0.1em;
   cursor: pointer;
 }
-
-
-
-
 /* rules pop up */
 .rules-modal{
   position: absolute;
@@ -247,7 +244,7 @@ background: whitesmoke;
   background: none;
   cursor: pointer;
 }
-
+/* rules */
 .show{
   opacity: 1;
   pointer-events: auto;

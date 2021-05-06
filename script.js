@@ -7,49 +7,46 @@ const closeBtn =document.querySelector('.close-btn');
 // game declaration
 const scoreCount =document.getElementById('score-count');
 const buttons=document.querySelectorAll('.g-btns');
-
+// gamediv & container div 
 const gameDiv=document.getElementById('game');
 const selectionDiv=document.getElementById('selection');
-
+// you select and house select buttons
 const userSelect = document.getElementById('user-select');
 const computerSelect = document.getElementById('computer-select');
-
+// user img & house img
 const userImg =document.querySelector('user-img');
 const houseImg =document.querySelector('house-img');
+// play again 
+const playAgain = document.getElementById('reset');
+
 const choices =['paper','scissors','rock'];
 let score =0;
 let userChoice=undefined;
+let houseChoice= undefined;
 
 buttons.forEach(button => {
   button.addEventListener('click',()=>{
       userChoice =button.getAttribute ('data-choice');
-      console.log(userChoice);
       
       checkWinner();
-      userImg.src=`./images/icon-${userChoice}.svg`;
-      houseImg.src=`./images/icon-${houseChoice}.svg`;
-      userSelect.classList.remove('btn-paper');
-      computerSelect.classList.remove('tn-scissors');
-
-      userSelect.classList.add(`btn-${userChoice}`);
-      computerSelect.classList.add(`btn-${houseChoice}`);
+      console.log(`user ${userChoice}`);
+      console.log(`house ${houseChoice}`);
       
-     
+      userImg.src=`./images/icon-${userChoice}.svg`; 
+      houseImg.src= `./images/icon-${houseChoice}.svg`;
   });
 });
 
 function housePick(){
   return(choices[Math.floor(Math.random() * choices.length)]);
 }
-console.log(`house pick ${housePick()}`);
+console.log(housePick());
 // logic
 function checkWinner(){
-  const houseChoice= housePick();
+   houseChoice= housePick();
   
   // update view 
-  viewSelection(userSelect,userChoice);
-  viewSelection(computerSelect,houseChoice);
-
+ 
   if(userChoice === houseChoice){
     // DRAW
     }else if(userChoice ==='paper' && houseChoice==='rock'|| userChoice ==='rock' && houseChoice==='scissors' || userChoice ==='scissors' && houseChoice==='paper') {
@@ -62,7 +59,7 @@ function checkWinner(){
 
     }
     gameDiv.style.display='none';
-    selectionDiv.style.display='flex';
+    selectionDiv.style.display='grid';
 }
 // score update
 function updateScore(value){
@@ -76,8 +73,13 @@ function updateScore(value){
 //   selectionEl.classList.remove('btn-scissors');
 //   selectionEl.classList.remove('btn-rock');
 
-// }
+// }  
 //Rules buttons open/close actions
+
+playAgain.addEventListener('click',()=>{
+  gameDiv.style.display='grid';
+  selectionDiv.style.display='none';
+} );
 
 rulesBtn.addEventListener('click',()=>{
   console.log('good');
