@@ -24,10 +24,10 @@ buttons.forEach(button => {
   button.addEventListener('click',()=>{
       userChoice =button.getAttribute ('data-choice');
       console.log(userChoice);
-      userImg.src=`./images/icon-${userChoice}.svg`;
-
-      checkWinner();
       
+      checkWinner();
+      userImg.src=`./images/icon-${userChoice}.svg`;
+      houseImg.src=`./images/icon-${houseChoice}.svg`;
      
   });
 });
