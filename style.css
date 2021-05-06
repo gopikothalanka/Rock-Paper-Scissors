@@ -92,7 +92,7 @@ body {
   height: 100%;
   background:url('./images/bg-triangle.svg')no-repeat;
   left: 28%;
-  top: 40%;
+  top: 30%;
   z-index: -1;
 }
 /* button initial properties */
@@ -129,8 +129,7 @@ body {
 .btn-paper{
   grid-area: paper;
   background: linear-gradient(to bottom,var(--paper-gradient),var(--paper-gradient2));
-   
- 
+  
 }
 .btn-scissors{
   grid-area: scissors;
@@ -140,7 +139,6 @@ body {
   grid-area: rock;
   background: linear-gradient(to bottom,var(--rock-gradient),var(--rock-gradient2));
 }
-
 .selection img{
   transform: scale(1.6);
 }
@@ -148,10 +146,6 @@ body {
 
 
 /* result */
-
-
-
-
 /* reset button */
 .re-set{
   outline: none;
@@ -167,21 +161,20 @@ body {
 
 }
 
-
-.selection{
-  display: none;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-  margin-top: 3rem;
-  letter-spacing: 2px;
+.container-two{
+  position: relative;
+  margin: 0 auto;
+  padding: 2rem;
   max-width: 800px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  place-items: center;
 }
-.selection .g-btns{
+.container-two.g-btns{
   margin-top: 40px;
   pointer-events: none;
 }
-.btn {
+.again-btn {
   
   background:whitesmoke;
   border: 2px solid var(--header-outline);
