@@ -1,5 +1,5 @@
 
-
+'use strict';
 //Rules declaration 
 const rulesModal= document.querySelector('.rules-modal');
 const rulesBtn=document.querySelector('.rules-btn');
@@ -20,6 +20,7 @@ const houseImg =document.querySelector('.house-img');
 const playAgain = document.getElementById('reset');
 
 const wiN = document.getElementById('win');
+const board =document.querySelector('.board')
 
 let score =0;
 let userChoice=undefined;
@@ -28,6 +29,8 @@ let houseChoice= undefined;
 buttons.forEach(button => {
   button.addEventListener('click',()=>{
       userChoice =button.getAttribute ('data-choice');
+      gameDiv.style.display='none';
+      selectionDiv.style.display='grid';
       checkWinner();
       updatePics();
     
@@ -45,6 +48,9 @@ function updatePics(){
       computerSelect.classList.add(`btn-${houseChoice}`);
       userImg.src=`./images/icon-${userChoice}.svg`; 
       houseImg.src= `./images/icon-${houseChoice}.svg`;
+      // setTimeout(()=>{ 
+      //   board.style.display='auto';
+      // },3000);
 }
 // random selection by system
 function housePick(){
@@ -67,12 +73,13 @@ function checkWinner(){
       updateScore(1);
     }else{
       // user loses
-      updateScore(-1);
+      if (score>0){
+        updateScore(-1);
+      }
       console.log("you lose");
       wiN.innerText='YOU lose';
     }
-    gameDiv.style.display='none';
-    selectionDiv.style.display='grid';
+    
 }
 // score update
 function updateScore(value){

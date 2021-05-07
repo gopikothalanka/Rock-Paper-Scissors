@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,600;0,700;1,600;1,700&display=swap')
 ;
+::-webkit-scrollbar{
+  display: none;
+}
 *{
   margin: 0;
   padding: 0;
@@ -23,14 +26,15 @@
   --header-outline:hsl(217, 16%, 45%);
   --bg-radial-gradient:hsl(229, 25%, 31%);
   --bg-radial-gradient2:hsl(237, 49%, 15%);
-  --mobile:375px;
-  --desktop:1366px;
+ 
 }
 
 body {
   font-family: "Barlow Semi Condensed", sans-serif;
   background: radial-gradient(at top, var(--bg-radial-gradient), var(--bg-radial-gradient2));
   min-height: 100vh;
+  max-height: 100vh; 
+
   text-transform: uppercase;
   color:white;
 }
@@ -173,6 +177,9 @@ body {
 .picked h2{
   padding-bottom: 1.5rem;
 }
+.board{
+  display: auto;
+}
 .board h1{
   font-size: 3rem;
 padding-bottom: 1.5rem;
@@ -249,4 +256,15 @@ background: whitesmoke;
 .show{
   opacity: 1;
   pointer-events: auto;
+}
+
+
+/* branding */
+
+footer{
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+footer a {
+color: red;
 }
