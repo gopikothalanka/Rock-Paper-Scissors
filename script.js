@@ -48,9 +48,7 @@ function updatePics(){
       computerSelect.classList.add(`btn-${houseChoice}`);
       userImg.src=`./images/icon-${userChoice}.svg`; 
       houseImg.src= `./images/icon-${houseChoice}.svg`;
-      // setTimeout(()=>{ 
-      //   board.style.display='auto';
-      // },3000);
+      
 }
 // random selection by system
 function housePick(){
@@ -63,12 +61,12 @@ function checkWinner(){
   
    if(userChoice === houseChoice){
     // DRAW
-    console.log("Draw");
+    
     wiN.innerText='DRAW';
 
     }else if(userChoice ==='paper' && houseChoice==='rock'|| userChoice ==='rock' && houseChoice==='scissors' || userChoice ==='scissors' && houseChoice==='paper') {
       // user win
-      console.log("you win");
+    
       wiN.innerText=' YOU WIN';
       updateScore(1);
     }else{
@@ -76,7 +74,7 @@ function checkWinner(){
       if (score>0){
         updateScore(-1);
       }
-      console.log("you lose");
+      
       wiN.innerText='YOU lose';
     }
     
