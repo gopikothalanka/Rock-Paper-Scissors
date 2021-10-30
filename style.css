@@ -87,6 +87,7 @@ body {
   place-items: center;
   height: 30rem;
   padding: 4rem;
+  grid-gap:6rem 0 ;
 }
 /* triangle backgroubd */
 .game::before{
@@ -139,6 +140,7 @@ body {
 .btn-rock{
   grid-area: rock;
   background: linear-gradient(to bottom,var(--rock-gradient),var(--rock-gradient2));
+  /* margin-top: 6rem; */
 }
 .selection img{
   transform: scale(1.6);
