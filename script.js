@@ -22,9 +22,8 @@ const playAgain = document.getElementById('reset');
 const wiN = document.getElementById('win');
 const board =document.querySelector('.board')
 
-let score =0;
-let userChoice=undefined;
-let houseChoice= undefined;
+let [score,userChoice,houseChoice] = [0,undefined,undefined];
+
 
 buttons.forEach(button => {
   button.addEventListener('click',()=>{
